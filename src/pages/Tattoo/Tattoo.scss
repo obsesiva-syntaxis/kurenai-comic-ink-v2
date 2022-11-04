@@ -1,0 +1,1030 @@
+@import '../../styles/index.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Prompt:wght@400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap');
+
+.tattoo {
+    display: grid;
+    grid-template-columns: 1fr .7fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-image: url(../../assets/kurenai-gran-logo-nomana.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    
+    &-bg-red {
+        position: absolute;
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        background-image: url(../../assets/rock-red.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: drop-shadow( 0rem 0rem 1rem rgb(219, 7, 49));
+        animation: efectoBlurStoneRed 2.5s cubic-bezier(.71,.14,.5,.94) infinite;
+    }
+
+    &-bg01 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        // background-color: #405DE6;
+    }
+
+    &-bg02 {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &__top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+            width: 100%;
+            height: 10%;
+
+            button {
+                cursor: pointer !important;
+                width: 18rem;
+                height: 2rem;
+                border: none;
+                background-color: white;
+                font-size: 1.5rem;
+                font-family: 'Montserrat', arial;
+                outline-offset: .4rem;
+                outline: .1rem solid #fff;
+                z-index: 2;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    outline-offset: .1rem;
+                    outline: .1rem solid rgb(255, 0, 0);
+                    background-color: crimson;
+                    color: white;
+                }
+            }
+
+        }
+
+        &__buttom {
+            width: 95%;
+            height: 85%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr .3fr;
+
+            &-avatar {
+                grid-column: 1/2;
+                grid-row: 1/2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                
+                &-img {
+                    width: 50rem;
+                    height: 30rem;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            &-info {
+                grid-column: 1/2;
+                grid-row: 2/3;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                // background-color: rgb(18, 81, 60);
+
+                &-title {
+                    display: flex;
+                    justify-content: space-between;
+                    color: white;
+                    width: 100%;
+                    height: 4rem;
+                    // background-color: rgb(0, 145, 255);
+
+                    &-left {
+                        display: flex;
+                        align-items: center;
+                        width: 25rem;
+                        height: 100%;
+                        // background-color: aqua;
+
+                        &-line {
+                            width: 100%;
+                            height: .1rem;
+                            background-color: white;
+                        }
+                    }
+
+                    &-name {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+
+                        h1 {
+                            font-size: 4rem;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: 400;
+                        }
+                    }
+
+                    &-right {
+                        display: flex;
+                        align-items: center;
+                        width: 25rem;
+                        height: 100%;
+                        // background-color: aqua;
+
+                        &-line {
+                            width: 100%;
+                            height: .1rem;
+                            background-color: $primary;
+                        }
+                    }
+                }
+
+                &-main {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 2rem 3rem;
+                    width: 100%;
+                    height: 100%;
+
+                    &-text{
+                        color: white;
+                        font-size: 2rem;
+                        font-family: 'Barlow', sans-serif;
+                        text-align: justify;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &-insta {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        align-self: flex-end;
+                        width: 100%;
+                        height: 5rem;
+                        // background-color: aqua;
+
+                        i {
+                            background: -webkit-linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-size: 4rem;
+                        }
+
+                        h1 {
+                            color: white;
+                            font-family: 'Barlow', sans-serif;
+                            margin-left: .5rem;
+                            font-size: 3rem;
+                        }
+                    }
+                }
+            }
+
+            &-footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                button {
+                    color: white;
+                    cursor: pointer;
+                    padding: 2rem 7rem;
+                    font-size: 2rem;
+                    font-family: 'Montserrat', sans-serif;
+                    border: none;
+                    background-color: black;
+                    z-index: 2;
+
+                    i {
+                        margin-right: 1rem;
+                    }
+                }
+
+            }
+
+        }
+        
+    }
+
+    &-bg03 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__gallery {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 90%;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 3rem;
+            
+            &-img {
+                outline-offset: .3rem;
+                outline: .1rem solid white;
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #22680e;
+            }
+
+            &-button {
+                color: white;
+                cursor: pointer;
+                padding: 2rem 7rem;
+                font-size: 2rem;
+                font-family: 'Montserrat', sans-serif;
+                border: none;
+                background-color: black;
+                z-index: 2;
+
+                i {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        &__section {
+            width: 85%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            // background-color: #405DE6;
+            gap: 4rem;
+
+            &-banner {
+                position: relative;
+                width: 100%;
+                height: 20%;
+                    // background-color: #C13584;
+                    
+                &-element-topleft {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 85%;
+                    height: 55%;
+                    background-position: center;
+                    background-size: cover;
+                    outline-offset: .4rem;
+                    outline: .1rem solid white;
+                    transition: transform .3s ease;
+                    // background-color: #F56040;
+                    z-index: 1;
+                    
+                    &:hover {
+                        z-index: 4;
+                        transform: scale(1.01);
+                    }
+                }
+
+                &-element-bottomright {
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 85%;
+                    height: 55%;
+                    background-position: center;
+                    background-size: cover;
+                    outline-offset: .4rem;
+                    outline: .1rem solid white;
+                    z-index: 2;
+                    transition: transform .3s ease;
+                    // background-color: #40f546;
+                    
+                    &:hover {
+                        z-index: 4;
+                        transform: scale(1.01);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+    @keyframes efectoBlurStoneRed {
+        0% {
+            // opacity: 1;
+            filter: drop-shadow( 0rem 0rem 1rem rgb(219, 7, 49));
+        }
+
+        30% {
+            // opacity: .7;
+            filter: drop-shadow( 0rem 0rem 3rem rgb(219, 7, 49));            
+        }
+        
+        50% {
+            // opacity: .5;
+            filter: drop-shadow( 0rem 0rem 4rem rgb(219, 7, 49));            
+            
+        }
+        70% {
+            // opacity: .3;
+            filter: drop-shadow( 0rem 0rem 3rem rgb(219, 7, 49));            
+        }
+        
+        100% {
+            // opacity: 0;
+            filter: drop-shadow( 0rem 0rem 1rem rgb(219, 7, 49));
+        }
+    }
+    @keyframes efectoBlurStoneBlue {
+        0% {
+            // opacity: 1;
+            filter: drop-shadow( 0rem 0rem 1rem #1f53be);
+        }
+
+        30% {
+            // opacity: .7;
+            filter: drop-shadow( 0rem 0rem 3rem #1f53be);            
+        }
+        
+        50% {
+            // opacity: .5;
+            filter: drop-shadow( 0rem 0rem 4rem #1f53be);            
+            
+        }
+        70% {
+            // opacity: .3;
+            filter: drop-shadow( 0rem 0rem 3rem #1f53be);            
+        }
+        
+        100% {
+            // opacity: 0;
+            filter: drop-shadow( 0rem 0rem 1rem #1f53be);
+        }
+    }
+    @keyframes efectoBlurStoneGreen {
+        0% {
+            // opacity: 1;
+            filter: drop-shadow( 0rem 0rem 1rem #22680e);
+        }
+
+        30% {
+            // opacity: .7;
+            filter: drop-shadow( 0rem 0rem 3rem #22680e);            
+        }
+        
+        50% {
+            // opacity: .5;
+            filter: drop-shadow( 0rem 0rem 4rem #22680e);            
+            
+        }
+        70% {
+            // opacity: .3;
+            filter: drop-shadow( 0rem 0rem 3rem #22680e);            
+        }
+        
+        100% {
+            // opacity: 0;
+            filter: drop-shadow( 0rem 0rem 1rem #22680e);
+        }
+    }
+
+    @keyframes efectoBlurMana {
+        0% {
+            opacity: 1;
+            // transform: rotate(140deg);
+        }
+
+        20% {
+            opacity: .5;        
+            // transform: rotate(145deg);
+        }
+        
+        40% {
+            opacity: 0;
+            // transform: rotate(150deg);
+        }
+        60% {
+            opacity: .3;
+            // transform: rotate(145deg);
+        }
+
+        80% {
+            opacity: .5;        
+            // transform: rotate(143deg);
+        }
+        
+        100% {
+            opacity: 1;
+            // transform: rotate(140deg);
+        }
+    }
+
+
+    // &__container-left {
+    //     width: 100%;
+    //     height: 100%;
+    //     grid-row: 1/2;
+    //     grid-column: 1/2;
+    //     display: none;
+    //     justify-content: center;
+    //     padding-top: 4rem;
+    //     overflow: hidden;
+
+    //     &-section {
+    //         width: 80rem;
+    //         height: 70rem;
+    //         display: flex;
+    //         flex-direction: column;
+    //         gap: 1rem;
+        
+    //         &-top {
+    //             position: relative;
+    //             width: 100%;
+    //             height: 50%;
+        
+    //             &-element-topleft {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 top: 3rem;
+    //                 left: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .4rem;
+    //                 outline: 5px solid $primary;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+
+    //             &-element-bottomright {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 bottom: 3rem;
+    //                 right: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .4rem;
+    //                 outline: 5px solid $primary;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+    //         }
+        
+    //         &-bottom {
+    //             position: relative;
+    //             width: 100%;
+    //             height: 50%;
+        
+    //             &-element-topleft {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 top: 3rem;
+    //                 left: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .4rem;
+    //                 outline: 5px solid $primary;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+
+    //             &-element-bottomright {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 bottom: 3rem;
+    //                 right: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .4rem;
+    //                 outline: 5px solid $primary;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     &-gallery {
+    //         display: flex;
+    //         padding: 5rem;
+    //         width: 100%;
+    //         height: 90%;
+    //         background-color: white;
+            
+    //         &-container {
+    //             position: relative;
+    //             padding: 5rem;
+    //             width: 100%;
+    //             height: 100%;
+    //             background-color: white;
+    //             transform: perspective(1px);
+    //             // z-index: 4;
+                
+    //             &-img {
+    //                 transform: scale(1.08);
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 background-position: center;
+    //                 background-repeat: no-repeat;
+    //                 background-size: cover;
+    //             }
+
+    //             &:after {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 right: 0;
+    //                 transform-origin: center;
+    //                 content: '';
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 z-index: -4;
+    //                 transform: scale(1.02);
+    //                 outline: 1rem solid $primary;
+    //             }
+                
+    //             &::before {
+    //                 content: '';
+    //                 position: absolute;
+    //                 transform-origin: center;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 background-color: #fff;
+    //                 transform: rotate(130deg) scaleX(1.7) scaleY(.5);
+    //                 z-index: -1;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // &__container-center {
+    //     display: none;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: center;
+    //     gap: 1rem;
+    //     width: 100%;
+    //     height: 100%;
+    //     grid-row: 1/2;
+    //     grid-column: 2/3;
+
+    //     &-papiro {
+    //         position: relative;
+    //         height: 55rem;
+    //         width: 100%;
+    //         z-index: 1;
+
+    //         &-left {
+    //             cursor: pointer;
+    //             padding: 5rem 0;
+    //             position: absolute;
+    //             z-index: 4;
+    //             bottom: 0;
+    //             left: 0;
+    //             display: flex;
+    //             flex-direction: column;
+    //             text-align: center;
+    //             justify-content: center;
+    //             width: 25%;
+    //             height: 80%;
+    //             background: rgb(42,0,0);
+    //             background: linear-gradient(40deg, rgb(42, 0, 0) 0%, rgb(54, 1, 2) 20%, rgb(97, 6, 6) 50%, rgb(160, 0, 0) 100%);
+    //             transition: transform .5s ease-in-out;
+                
+    //             &::before {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 bottom: 0;
+    //                 left: 0;
+    //                 right: 0;
+    //                 transform-origin: center;
+    //                 content: '';
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 z-index: 1;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //             }
+
+    //             &:hover {
+    //                 transform: scale(1.05);
+    //                 z-index: 4 !important;
+    //             }
+
+    //             h1 {
+    //                 font-family: 'Montserrat', sans-serif;
+    //                 font-weight: 400;
+    //                 width: 100%;
+    //                 color: #fff;
+    //             }
+    //         }
+
+    //         &-center {
+    //             cursor: pointer;
+    //             padding: 5rem 0;
+    //             position: absolute;
+    //             margin: auto;
+    //             top: 0;
+    //             bottom: 0;
+    //             left: 0;
+    //             right: 0;
+    //             flex-direction: column;
+    //             text-align: center;
+    //             justify-content: center;
+    //             width: 25%;
+    //             height: 80%;
+    //             background: rgb(42,0,0);
+    //             background: linear-gradient(40deg, rgb(42, 0, 0) 0%, rgb(54, 1, 2) 20%, rgb(97, 6, 6) 50%, rgb(160, 0, 0) 100%);
+    //             transition: transform .5s ease-in-out;
+    //             z-index: 2;
+
+    //             &::before {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 bottom: 0;
+    //                 left: 0;
+    //                 right: 0;
+    //                 transform-origin: center;
+    //                 content: '';   
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //                 z-index: 1;
+    //             }
+
+    //             &:hover {
+    //                 transform: scale(1.05);
+    //                 z-index: 4 !important;
+    //             }
+
+    //             h1 {
+    //                 font-family: 'Montserrat', sans-serif;
+    //                 font-weight: 400;
+    //                 width: 100%;
+    //                 color: #fff;
+    //             }
+    //         }
+
+    //         &-right {
+    //             cursor: pointer;
+    //             padding: 5rem 0;
+    //             position: absolute;
+    //             top: 0;
+    //             right: 0;
+    //             display: flex;
+    //             flex-direction: column;
+    //             text-align: center;
+    //             justify-content: space-around;
+    //             width: 25%;
+    //             height: 80%;
+    //             background: rgb(42,0,0);
+    //             background: linear-gradient(40deg, rgb(42, 0, 0) 0%, rgb(54, 1, 2) 20%, rgb(97, 6, 6) 50%, rgb(160, 0, 0) 100%);
+    //             transition: transform .5s ease-in-out;
+
+    //             &::before {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 bottom: 0;
+    //                 left: 0;
+    //                 right: 0;
+    //                 transform-origin: center;
+    //                 content: '';   
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //             }
+
+    //             &:hover {
+    //                 transform: scale(1.05);
+    //                 z-index: 4 !important;
+    //             }
+
+    //             h1 {
+    //                 font-family: 'Montserrat', sans-serif;
+    //                 width: 100%;
+    //                 color: #fff;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // &__container-right {
+    //     width: 100%;
+    //     height: 100%;
+    //     grid-row: 1/2;
+    //     grid-column: 3/4;
+    //     display: none;
+    //     justify-content: center;
+    //     padding-top: 4rem;
+
+    //     &-section {
+    //         width: 80rem;
+    //         height: 70rem;
+    //         display: flex;
+    //         flex-direction: column;
+    //         gap: 1rem;
+        
+    //         &-top {
+    //             position: relative;
+    //             width: 100%;
+    //             height: 50%;
+        
+    //             &-element-topleft {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 top: 3rem;
+    //                 right: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+
+    //             &-element-bottomright {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 bottom: 3rem;
+    //                 left: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+    //         }
+        
+    //         &-bottom {
+    //             position: relative;
+    //             width: 100%;
+    //             height: 50%;
+        
+    //             &-element-topleft {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 top: 3rem;
+    //                 right: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .5rem;
+    //                 outline: .2rem solid rgb(131, 129, 129) ;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+
+    //             &-element-bottomright {
+    //                 cursor: pointer;
+    //                 position: absolute;
+    //                 bottom: 3rem;
+    //                 left: 0;
+    //                 width: 65%;
+    //                 height: 55%;
+    //                 // background-image: url(../../assets/gantz-death.jpg);
+    //                 background-position: center;
+    //                 background-size: cover;
+    //                 outline-offset: .5rem;
+    //                 outline: .5rem solid rgb(131, 129, 129) ;
+    //                 transition: transform .3s ease-in-out;
+
+    //                 &:hover {
+    //                     z-index: 2;
+    //                     transform: scale(1.01);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     &-about {
+    //         width: 80%;
+    //         height: 85%;
+    //         // background-color: yellowgreen;
+    //         display: grid;
+    //         grid-template-columns: 1fr;
+    //         grid-template-rows: 1fr 1fr .3fr;
+
+    //         &-avatar {
+    //             grid-column: 1/2;
+    //             grid-row: 1/2;
+    //             display: flex;
+    //             justify-content: center;
+    //             align-items: center;
+    //             width: 100%;
+    //             height: 100%;
+    //             // background-color: aquamarine;
+                
+    //             &-img {
+    //                 width: 50rem;
+    //                 height: 30rem;
+    //                 background-position: center;
+    //                 background-repeat: no-repeat;
+    //                 background-size: cover;
+    //             }
+    //         }
+
+    //         &-info {
+    //             grid-column: 1/2;
+    //             grid-row: 2/3;
+    //             display: flex;
+    //             flex-direction: column;
+    //             width: 100%;
+    //             height: 100%;
+    //             // background-color: rgb(18, 81, 60);
+
+    //             &-title {
+    //                 display: flex;
+    //                 justify-content: space-between;
+    //                 color: $primary;
+    //                 width: 100%;
+    //                 height: 4rem;
+    //                 // background-color: rgb(0, 145, 255);
+
+    //                 &-left {
+    //                     display: flex;
+    //                     align-items: center;
+    //                     width: 25rem;
+    //                     height: 100%;
+    //                     // background-color: aqua;
+
+    //                     &-line {
+    //                         width: 100%;
+    //                         height: .1rem;
+    //                         background-color: $primary;
+    //                     }
+    //                 }
+
+    //                 &-name {
+    //                     display: flex;
+    //                     justify-content: center;
+    //                     align-items: center;
+    //                     width: 100%;
+    //                     height: 100%;
+
+    //                     h1 {
+    //                         font-size: 4rem;
+    //                         font-family: 'Montserrat', sans-serif;
+    //                         font-weight: 400;
+    //                     }
+    //                 }
+
+    //                 &-right {
+    //                     display: flex;
+    //                     align-items: center;
+    //                     width: 25rem;
+    //                     height: 100%;
+    //                     // background-color: aqua;
+
+    //                     &-line {
+    //                         width: 100%;
+    //                         height: .1rem;
+    //                         background-color: $primary;
+    //                     }
+    //                 }
+    //             }
+
+    //             &-main {
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 justify-content: space-between;
+    //                 padding: 2rem 3rem;
+    //                 width: 100%;
+    //                 height: 100%;
+
+    //                 &-text{
+    //                     font-size: 2rem;
+    //                     font-family: 'Barlow', sans-serif;
+    //                     text-align: justify;
+    //                     width: 100%;
+    //                     height: 100%;
+    //                 }
+
+    //                 &-insta {
+    //                     display: flex;
+    //                     justify-content: center;
+    //                     align-items: center;
+    //                     align-self: flex-end;
+    //                     width: 100%;
+    //                     height: 5rem;
+    //                     // background-color: aqua;
+
+    //                     i {
+    //                         background: -webkit-linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+    //                         -webkit-background-clip: text;
+    //                         -webkit-text-fill-color: transparent;
+    //                         font-size: 4rem;
+    //                     }
+
+    //                     h1 {
+    //                         color: $primary;
+    //                         font-family: 'Barlow', sans-serif;
+    //                         margin-left: .5rem;
+    //                         font-size: 3rem;
+    //                     }
+    //                 }
+    //             }
+    //         }
+
+    //         &-footer {
+    //             display: flex;
+    //             justify-content: center;
+    //             align-items: center;
+    //             width: 100%;
+    //             height: 100%;
+
+    //             button {
+    //                 color: $primary;
+    //                 cursor: pointer;
+    //                 padding: 2rem 7rem;
+    //                 font-size: 2rem;
+    //                 font-family: 'Montserrat', sans-serif;
+    //                 border: none;
+    //                 background-color: #fff;
+    //                 z-index: 2;
+
+    //                 i {
+    //                     margin-right: 1rem;
+    //                 }
+    //             }
+
+    //         }
