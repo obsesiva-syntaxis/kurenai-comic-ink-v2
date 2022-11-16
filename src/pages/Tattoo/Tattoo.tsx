@@ -30,9 +30,8 @@ const TattoosBruno = [
         active: false,
         name: 'Bruno Salas',
         avatar: './assets/avatar02.jpg',
-        biograph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis harum numquam repudiandae dolorem exercitationem iure nam natus quia soluta! Natus ex magni mollitia aut necessitatibus quidem ipsam! Iure, explicabo laboriosam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sed consectetur a sapiente cupiditate dolor doloribus veritatis aliquam assumenda magni facere tempore similique soluta, nemo alias iusto repellendus accusamus. Optio!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellat dicta tenetur numquam consequuntur enim illo asperiores nisi, commodi perspiciatis vero dolor fuga suscipit vitae odit eos perferendis. Facilis, harum.`,
+        biograph: `Aficionado al arte y a la ñoñez misma. Llevo 6 años dedicandome al arte del tatuaje, siempre agradecido de las personas que apoya mi trabajo
+                    y el oficio del arte.`,
         insta: 'brunosalas.ink'
 
     },
@@ -54,9 +53,9 @@ const TattoosMario = [
         active: false,
         name: 'Mario Henriquez',
         avatar: './assets/avatar04.jpg',
-        biograph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis harum numquam repudiandae dolorem exercitationem iure nam natus quia soluta! Natus ex magni mollitia aut necessitatibus quidem ipsam! Iure, explicabo laboriosam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sed consectetur a sapiente cupiditate dolor doloribus veritatis aliquam assumenda magni facere tempore similique soluta, nemo alias iusto repellendus accusamus. Optio!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellat dicta tenetur numquam consequuntur enim illo asperiores nisi, commodi perspiciatis vero dolor fuga suscipit vitae odit eos perferendis. Facilis, harum.`,
+        biograph: `En mi trayecto en esta vida de tatuajes he aprendido que el arte es un momento y un lugar, cada trabajo
+                    que realizo marcan ese espacio de tiempo, por ese motivo para mi la entrega de una experiencia es vital en mi trabajo, 
+                    las experiencias, crear vinculos y momentos, que al final del dia para el cliente es agradable y una historia que llevara la vida entera`,
         insta: 'tatuajesctm'
     },
 ];
@@ -77,9 +76,7 @@ const TattoosLucy = [
         active: false,
         name: 'Luciano Cantillana',
         avatar: './assets/avatar03.jpg',
-        biograph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis harum numquam repudiandae dolorem exercitationem iure nam natus quia soluta! Natus ex magni mollitia aut necessitatibus quidem ipsam! Iure, explicabo laboriosam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sed consectetur a sapiente cupiditate dolor doloribus veritatis aliquam assumenda magni facere tempore similique soluta, nemo alias iusto repellendus accusamus. Optio!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellat dicta tenetur numquam consequuntur enim illo asperiores nisi, commodi perspiciatis vero dolor fuga suscipit vitae odit eos perferendis. Facilis, harum.`,
+        biograph: `"Ya que no tenemos alas, debemos buscar otra forma de volar"`,
         insta: 'luciano.cantillana.art'
     },
 ];
@@ -108,8 +105,8 @@ export const TattooContext = createContext({} as TattooContextEssence);
 const { Provider } = TattooContext;
 
 const Tattoo = () => {
-    const [tattooState, setTattooState] = useState(TattoosBruno);
-    const [selectTattoo, setSelectTattoo] = useState<SelectTattooEssence>({ active: false, tatuador: TattoosBruno[0], imgSelected: TattoosBruno[0].img[0] });
+    const [tattooState, setTattooState] = useState(TattoosLucy);
+    const [selectTattoo, setSelectTattoo] = useState<SelectTattooEssence>({ active: false, tatuador: TattoosLucy[0], imgSelected: TattoosLucy[0].img[0] });
 
     const selectPapiro = (name: string) => {
         switch (name) {
@@ -180,12 +177,6 @@ const Tattoo = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="tattoo-bg02__buttom-footer">
-                            <button onClick={() => handleReturn()}>
-                                <i className="fa-solid fa-angle-left"></i>
-                                VOLVER
-                            </button>
-                        </div> */}
                     </div>
                 </div>
                 <div className="tattoo-bg03">
@@ -223,97 +214,6 @@ const Tattoo = () => {
                 </div>
 
                 <div className="tattoo-bg-red"></div>
-
-
-
-                {/* <div className="tattoo__container-left">
-                    {
-                        !selectTattoo.active ?
-                            (
-                                <div className="tattoo__container-left-section">
-                                    <div className="tattoo__container-left-section-top">
-                                        <div className="tattoo__container-left-section-top-element-topleft" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[0])} style={{ backgroundImage: `url(${tattooState[0].img[0]})` }} ></div>
-                                        <div className="tattoo__container-left-section-top-element-bottomright" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[1])} style={{ backgroundImage: `url(${tattooState[0].img[1]})` }} ></div>
-                                    </div>
-                                    <div className="tattoo__container-left-section-bottom">
-                                        <div className="tattoo__container-left-section-bottom-element-topleft" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[2])} style={{ backgroundImage: `url(${tattooState[0].img[2]})` }} ></div>
-                                        <div className="tattoo__container-left-section-bottom-element-bottomright" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[3])} style={{ backgroundImage: `url(${tattooState[0].img[3]})` }} ></div>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="tattoo__container-left-gallery">
-                                    <div className="tattoo__container-left-gallery-container">
-                                        <div className="tattoo__container-left-gallery-container-img" style={{ backgroundImage: `url(${selectTattoo.imgSelected})` }}></div>
-                                    </div>
-                                </div>
-                            )
-                    }
-                </div>
-                <div className="tattoo__container-center">
-                    <div className="tattoo__container-center-papiro">
-                        <div className="tattoo__container-center-papiro-left" onClick={() => selectPapiro('mario')} style={{ backgroundColor: `${activePapiroC ? 'transparent' : 'transparent'}`, zIndex: `${activePapiroC ? '3' : '1'}` }}>
-                            <VerticalName name="TATUAJESCTM" />
-                        </div>
-                        <div className="tattoo__container-center-papiro-center" onClick={() => selectPapiro('bruno')} style={{ backgroundColor: `${activePapiroB ? 'transparent' : 'transparent'}`, zIndex: `${activePapiroB ? '3' : '1'}` }}>
-                            <VerticalName name="BRUNOSALASINK" />
-                        </div>
-                        <div className="tattoo__container-center-papiro-right" onClick={() => selectPapiro('lucy')} style={{ backgroundColor: `${activePapiroA ? '#dc143c' : '#e3526f'}`, zIndex: `${activePapiroA ? '3' : '1'}` }}>
-                            <VerticalName name="SHOROMOTAINK" />
-                        </div>
-                    </div>
-                </div>
-                <div className="tattoo__container-right">
-                    {
-                        !selectTattoo.active ?
-                            (
-                                <div className="tattoo__container-right-section">
-                                    <div className="tattoo__container-right-section-top">
-                                        <div className="tattoo__container-right-section-top-element-topleft" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[4])} style={{ backgroundImage: `url(${tattooState[0].img[4]})` }}></div>
-                                        <div className="tattoo__container-right-section-top-element-bottomright" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[5])} style={{ backgroundImage: `url(${tattooState[0].img[5]})` }}></div>
-                                    </div>
-                                    <div className="tattoo__container-right-section-bottom">
-                                        <div className="tattoo__container-right-section-bottom-element-topleft" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[6])} style={{ backgroundImage: `url(${tattooState[0].img[6]})` }}></div>
-                                        <div className="tattoo__container-right-section-bottom-element-bottomright" onClick={() => onSelectTattoo(tattooState[0], tattooState[0].img[7])} style={{ backgroundImage: `url(${tattooState[0].img[7]})` }}></div>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="tattoo__container-right-about">
-                                    <div className="tattoo__container-right-about-avatar">
-                                        <div className="tattoo__container-right-about-avatar-img" style={{ backgroundImage: `url(${selectTattoo.tatuador.avatar})` }}></div>
-                                    </div>
-                                    <div className="tattoo__container-right-about-info">
-                                        <div className="tattoo__container-right-about-info-title">
-                                            <div className="tattoo__container-right-about-info-title-left">
-                                                <div className="tattoo__container-right-about-info-title-left-line"></div>
-                                            </div>
-                                            <div className="tattoo__container-right-about-info-title-name">
-                                                <h1> { selectTattoo.tatuador.name } </h1>
-                                            </div>
-                                            <div className="tattoo__container-right-about-info-title-right">
-                                                <div className="tattoo__container-right-about-info-title-left-line"></div>
-                                            </div>
-                                        </div>
-
-                                        <div className="tattoo__container-right-about-info-main">
-                                            <div className="tattoo__container-right-about-info-main-text">
-                                               { selectTattoo.tatuador.biograph }
-                                            </div>
-                                            <div className="tattoo__container-right-about-info-main-insta">
-                                                <i className="fa-brands fa-instagram"></i>
-                                                <h1> { selectTattoo.tatuador.insta }</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tattoo__container-right-about-footer">
-                                        <button onClick={ () => handleReturn() }>
-                                            <i className="fa-solid fa-angle-left"></i>
-                                            VOLVER
-                                        </button>
-                                    </div>
-                                </div>
-                            )
-                    }
-                </div> */}
             </div>
         </Provider>
     )

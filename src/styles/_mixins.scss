@@ -1,0 +1,22 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fullViewport {
+    width: 100vw;
+    height: 100vh;
+}
+
+@mixin fullContainer {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin bgImage( $url ){
+    background-image: $url;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

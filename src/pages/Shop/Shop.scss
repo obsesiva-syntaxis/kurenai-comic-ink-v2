@@ -5,147 +5,56 @@
     display: grid;
     grid-template-columns: 1fr .7fr 1fr;
     grid-template-rows: 1fr;
-    width: 100vw;
-    height: 100vh;
+    @include fullViewport;
     background-color: black;
-    background-image: url(../../assets/kurenai-gran-logo-nomana.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    @include bgImage(url(../../assets/kurenai-gran-logo-nomana.png));
     position: relative;
+
+    &__container-left {
+        @include flexCenter;
+        @include fullContainer;
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        &-box {
+            @include flexCenter;
+            width: 90%;
+            height: 80%;
+        }
+    }
+
+    &__container-right {
+        display: flex;
+        flex-direction: column;
+        @include fullContainer;
+        grid-column: 3/4;
+        grid-row: 1/2;
+
+        &-box {
+            @include flexCenter;
+            width: 100%;
+            height: 100%;
+
+            i {
+                color: white;
+                font-size: 5rem;
+                margin-right: 3rem;
+            }
+
+            h1 {
+                font-size: 5rem;
+                font-family: 'Monserrat';
+                color: white;
+            }
+        }
+    }
 
     &-bg-blue{
         position: absolute;
         content: '';
-        // z-index: -1;
-        width: 100vw;
-        height: 100vh;
-        background-image: url(../../assets/rock-blue.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
+        @include fullViewport;
+        @include bgImage(url(../../assets/rock-blue.png));
         filter: drop-shadow( 0rem 0rem 1rem #1f53be);
         animation: efectoBlurStoneBlue 2.5s cubic-bezier(.71,.14,.5,.94) infinite;
-        // background-color: red;
     }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: 70%;
-        // background-color: aqua;
-
-        &-gallery {
-            width: 100%;
-            height: 90%;
-            display: flex;
-            justify-content: space-between;
-            // background-color: rgb(24, 159, 114);
-
-            &-img {
-                width: 16%;
-                height: 100%;
-                // background-color: burlywood;
-                // background-image: url(../../../public/assets/vagabond01.jpg);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                box-shadow: 1px 1px 20px 1px rgb(186, 184, 184);
-                transition: transform .1s ease-in-out;
-                cursor: pointer;
-
-                &:hover {
-                    transform: scale(1.01);
-                }
-            }
-        }
-
-        &-menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 10%;
-            
-            h1 {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 300;
-                color: $primary;
-                font-size: 3rem;
-            }
-        }
-    }
-
-    &__focus {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: 70%;
-        // background-color: aquamarine;
-
-        &-top {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 60%;
-            // background-color: brown;
-
-            &-container {
-                position: relative;
-                padding: 5rem;
-                width: 29%;
-                height: 100%;
-                background-color: white;
-                transform: perspective(1px);
-                // z-index: 4;
-                
-                &-img {
-                    transform: scale(1.2);
-                    width: 100%;
-                    height: 100%;
-                    background-image: url(../../../public/assets/vagabond01.jpg);
-                    background-position: top;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    // background-color: rgba(5, 127, 127, 0.59);
-                }
-
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    transform-origin: center;
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    z-index: -4;
-                    transform: scale(1.02);
-                    outline: .5rem solid $primary;
-                }
-                
-                &::before {
-                    content: '';
-                    display: none;
-                    position: absolute;
-                    transform-origin: center;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: #fff;
-                    transform: rotate(133deg) scaleX(1.7) scaleY(.5);
-                    z-index: -1;
-                }
-            }
-        }
-
-        &-bottom {
-            width: 100%;
-            height: 40%;
-            // background-color: rebeccapurple;
-        }
-
-    }
-
 }
